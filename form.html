@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form Kontak</title>
+    <script type="text/javascript">
+        function validasi() {
+            var email = document.getElementById("Email").value;
+            var noTelp = document.getElementById("NoTelp").value;
+
+            if (email.indexOf("@") === -1) {
+                alert("Email yang dimasukkan tidak valid!");
+                return false;
+            }
+
+            if (isNaN(noTelp) || noTelp.trim() === "") {
+                alert('Nomor Telepon harus berupa angka!');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body bgcolor="Lightskyblue"> 
+
+<body>
+    <form action="#" onsubmit="return validasi()">
+        <div class="container">
+          <h1>Form Kontak</h1>
+          <p>Isi form identitas dibawah ini.</p>
+          <hr>
+      
+          <label for="Nama"><b>Nama</b></label>
+          <input type="text" placeholder="Masukkan Nama Disini" name="Nama" id="Nama" size="20" required>
+
+          <br>
+          <br>
+
+          <label for="Email"><b>Email</b></label>
+          <input type="text" placeholder="Masukkan Email Disini" name="Email" id="Email" size="20" required>
+      
+          <br>
+          <br>
+
+          <label for="NoTelp"><b>Nomor Telepon</b></label>
+          <input type="text" name="country code" value="+62" size="2" readonly/>
+          <input type="text" placeholder="Masukkan Nomor Telepon Disini" name="NoTelp" id="NoTelp" size="20" required>
+      
+          <br>
+          <br>
+
+          <label for="Pesan"><b>Pesan</b></label>
+          <br>
+          <textarea cols="80" rows="5" id="Pesan" required></textarea>
+          
+          <br>
+          <br>
+
+          <button type="submit" class="submitbtn">Submit</button>
+        </div>
+      
+      </form> 
+    
+</body>
+</html>
